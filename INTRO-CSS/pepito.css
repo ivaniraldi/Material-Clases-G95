@@ -1,0 +1,39 @@
+.titulo{
+    text-align: center;
+    text-decoration: underline;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    border: 1px solid red;
+    padding: 10px;
+    color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding-bottom: 60px;
+    padding-top: 2px;
+}
+footer{
+    background-color: beige;
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid black;
+    margin-top: 20px;
+}
+
+.texto{
+    color:rgb(16, 91, 66)
+}
+.imagen{
+    width: 200px;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
