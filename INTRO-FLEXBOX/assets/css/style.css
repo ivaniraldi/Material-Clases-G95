@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.flex-item{
+    width: 25%;
+}
+
+.flex-item-2:hover{
+    scale: 1.1;
+}
