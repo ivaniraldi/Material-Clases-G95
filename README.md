@@ -3,12 +3,19 @@
 Este repositorio contiene el material de apoyo para los alumnos de la **Generación 95** de **Desafío Latam**, impartido por **Iván Iraldi**.
 
 ## 📌 Módulos del programa
+<br>
 1️⃣ **Introducción al Desarrollo Web** 🌍
+<br>
 2️⃣ **CSS Avanzado** 🎨
+<br>
 3️⃣ **JavaScript para la Web** ⚡
+<br>
 4️⃣ **React** ⚛️
+<br>
 5️⃣ **SQL** 🗄️
+<br>
 6️⃣ **Backend con Node.js** 🚀
+<br>
 7️⃣ **Proyecto Final** 🏆
 
 ## 📅 Calendario Académico
