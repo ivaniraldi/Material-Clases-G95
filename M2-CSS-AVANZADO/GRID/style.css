@@ -1,0 +1,77 @@
+.container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto auto;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-rows: 10% 10% 70% 10%;
+  grid-template-areas:
+    "navbar navbar navbar"
+    "ads ads ads"
+    "menu content content"
+    "ads2 footer footer";
+}
+
+.barra-navegacion {
+  grid-area: navbar;
+  border: 2px solid red;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.menu-lateral {
+  margin: 0;
+  overflow: auto;
+  grid-area: menu;
+  border: 2px solid green;
+}
+
+.contenido {
+  display: grid;
+  padding: 20px;
+  gap: 25px;
+  overflow: auto;
+  grid-template-columns: auto auto auto;
+  grid-area: content;
+}
+
+.pie-de-pagina {
+  grid-area: footer;
+  border: 2px solid blue;
+}
+
+.galeria {
+  display: grid;
+  height: 100%;
+  gap: 10px;
+  overflow: auto;
+
+  grid-template-columns: repeat(3, auto);
+}
+
+.galeria img {
+  width: 100%;
+}
+
+.ads {
+  grid-area: ads;
+  border: 2px solid violet;
+}
+.ads2 {
+  grid-area: ads2;
+  border: 2px solid violet;
+}

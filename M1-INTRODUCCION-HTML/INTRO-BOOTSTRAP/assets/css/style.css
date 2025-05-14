@@ -1,0 +1,23 @@
+.boton-personalizado{
+    background-color: blueviolet;
+}
+
+.contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.text-verde{
+    color: #28A745
+}
+
+.bg-verde{
+    background-color: #28A745;
+}
+
+.font-roboto{
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+}

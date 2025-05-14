@@ -1,0 +1,10 @@
+.flex-container {
+    display: flex;
+    border: 1px solid blue;
+    flex-direction: column;
+    
+}
+.flex-item {
+    border: 1px solid red;
+    width: 80px;
+}
