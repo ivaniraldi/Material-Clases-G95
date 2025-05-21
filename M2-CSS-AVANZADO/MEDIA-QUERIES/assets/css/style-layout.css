@@ -1,0 +1,137 @@
+body{
+    background-color: white;
+    color: black;
+    font-family: monospace;
+    margin: 0;
+    display: grid;
+    grid-template-areas: 
+    "navbar"
+    "menu"
+    "main"
+    "footer"
+    ;
+
+}
+
+.navbar{
+    grid-area: navbar;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around ;
+    gap: 10px;
+    align-items: center;
+    padding: 25px;
+}
+.nav-link{
+    color: white;
+}
+
+
+
+.menu-lateral{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;   
+    padding: 10px;
+    grid-area: menu;
+    background-color: #666;
+}
+.menu-list{
+    list-style: none;
+    display: flex; 
+    gap: 10px;
+}
+
+.main-container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: main;
+    background-color: #ccc;
+}
+
+.grilla-productos{
+    padding: 10px;
+    display: grid;
+    grid-template-columns:  1fr;
+    gap: 10px;
+}
+
+.carta-producto{
+    background-color: rgb(237, 237, 237);
+    color: #000;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.carta-producto img{
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.footer{
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    grid-area: footer;
+    color: white;
+    background-color: #333;
+}
+
+
+/* Media Queries */
+
+@media (min-width: 576px) {
+    body{
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas: 
+        "navbar navbar"
+        "menu main"
+        "footer footer"
+        ;
+    }
+    .grilla-productos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .menu-lateral{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .menu-list{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
+
+@media (min-width: 768px) {
+    body{
+        grid-template-columns: 1fr 4fr;
+        grid-template-areas: 
+        "navbar navbar"
+        "menu main"
+        "footer footer"
+        ;
+    }
+    .grilla-productos{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .menu-lateral{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 10px;
+    }
+    .menu-list{
+        flex-direction: column;
+        gap: 5px;
+    }
+
+}
