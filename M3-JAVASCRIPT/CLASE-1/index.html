@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primera Clase de JS</title>
+     <script src="./assets/js/script.js"></script>
+</head>
+<body id="miBody" >
+    <h1 id="" >Bienvenidos a JavaScript</h1>
+
+    <button onclick="alert(botonTexto)">boton</button>
+
+    <p id="miParrafo"></p>
+
+    <script>
+
+
+
+        console.log(document)
+
+        let parrafo = document.querySelector('#miParrafo')
+
+        let boton = document.querySelector('#miBoton')
+
+    
+
+        let nombre = "Ivan"
+
+        let miBody = document.querySelector('#miBody')
+        miBody.style.backgroundColor = "black"
+        miBody.style.color = "white"
+        
+        parrafo.innerHTML = "Hola " + nombre
+        parrafo.style.color= "red"
+        parrafo.style.fontSize = "30px"
+        parrafo.style.fontWeight = "bold"
+        parrafo.style.textAlign = "center"
+
+
+
+
+        console.log(parrafo)
+        // let num1 = 10;
+        // let num2 = 15;
+        // const resultado = num1 + num2 - 5 * 4 / 2 + (num1 + num2) / 2;
+        // alert(resultado);
+
+
+        //EJERCICIO DEL PROMPT
+        // let num3 = prompt("Ingrese un numero para num3")
+        // num3 = "3"
+
+        // alert("El num3 ingresado es: " + num3)
+
+        // let num4 = prompt("Ingrese otro numero para num4")
+        // num4 = "5"
+        // alert("El num4 ingresado es: " + num4)
+
+        // let numeroParaParsear = 1.575475
+        // let numeroParseado = parseInt(numeroParaParsear)
+        // alert("El numero parseado es: " + numeroParseado)
+
+        // let pepito = Number(num3)
+        // let conversionNum4 = Number(num4)
+        // num5 = "3" + "5" = "35"
+        // let num5 = pepito + conversionNum4
+        // let lenguajeDeProgramacion
+        // let lenguaje_de_programacion
+        // alert("Resolviendo suma..." + num5)
+        //EJERCICIO DEL PROMPT
+
+    </script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
