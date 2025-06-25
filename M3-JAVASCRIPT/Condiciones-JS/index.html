@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Condiciones En Javascript</title>
+    <script></script>
+  </head>
+  <body>
+    <h1 id="titulo"></h1>
+
+    <select name="num" id="">
+      <option value="1">1</option>
+      <option value="2">2</option>
+    </select>
+
+    <p id="secret-result"></p>
+    <input type="text" id="input" />
+    <button
+      onclick="
+
+    let valorDelInput = document.querySelector('#input').value
+    console.log(valorDelInput)
+
+    let mensaje = document.querySelector('#secret-result')
+    
+
+    if(valorDelInput == '123123'){
+       alert('Password Correcto')
+       mensaje.innerHTML = 'Password Correcto'
+    }else{
+       alert('Password Incorrecto')
+       mensaje.innerHTML = 'Password Incorrecto'
+    }
+
+
+"
+    >
+      Hazme click
+    </button>
+
+    <p id="valor">2000</p>
+    <br />
+    <p id="cantidad">0</p>
+    <br />
+    <button
+      onclick="
+
+let valor = document.querySelector('#valor')
+let cantidad = document.querySelector('#cantidad')
+let resultado = document.querySelector('#resultado')
+
+
+
+let cantidadFinal = cantidad.innerHTML = Number(cantidad.innerHTML) - 1
+
+
+    resultado.innerHTML = Number(valor.innerHTML) * cantidadFinal
+
+    if(cantidad.innerHTML < 0){ 
+        alert('Tienes que seleccionar al menos un producto')
+        cantidad.innerHTML = 0
+        resultado.innerHTML = 0
+    }
+
+    "
+    >
+      -
+    </button>
+    <button
+      onclick="
+        let valor2 = document.querySelector('#valor')
+        let cantidad2 = document.querySelector('#cantidad')
+        let resultado2 = document.querySelector('#resultado')
+
+        cantidadFinal2 = cantidad2.innerHTML = Number(cantidad2.innerHTML) + 1
+
+        resultado2.innerHTML = Number(valor2.innerHTML) * cantidadFinal2"
+    >
+      +
+    </button>
+    <br />
+    <span>Total =</span>
+    <p id="resultado">0</p>
+
+
+    <input type="number" id="numero">
+    <button id="verificar" onclick="
+      let inputValue = document.querySelector('#numero').value
+
+      if(inputValue > 50){
+        alert('Superaste la cantidad')
+      }
+    "> Verificar</button>
+ 
+  </body>
+</html>
