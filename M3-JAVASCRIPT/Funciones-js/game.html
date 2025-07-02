@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Suma</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #juego {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        input[type="number"] {
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .correcto {
+            color: green;
+        }
+        .incorrecto {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="juego">
+        <h1>¡A Sumar!</h1>
+        <p>¿Cuánto es <span id="numero1"></span> + <span id="numero2"></span>?</p>
+        <input type="number" id="respuestaUsuario" placeholder="Escribe tu respuesta">
+        <br>
+        <button onclick="comprobarRespuesta()">Comprobar</button>
+        <p id="resultado"></p>
+        <button onclick="reiniciarJuego()" style="margin-top: 10px; background-color: #008CBA;">Jugar de Nuevo</button>
+    </div>
+
+    <script>
+        let num1;
+        let num2;
+        let sumaCorrecta;
+
+        function generarNumeros() {
+            num1 = Math.floor(Math.random() * 9) + 1; // Números del 1 al 9
+            num2 = Math.floor(Math.random() * 9) + 1;
+            sumaCorrecta = num1 + num2;
+
+            document.getElementById('numero1').textContent = num1;
+            document.getElementById('numero2').textContent = num2;
+            document.getElementById('respuestaUsuario').value = ''; // Limpiar el input
+            document.getElementById('resultado').textContent = ''; // Limpiar el resultado
+        }
+
+        function comprobarRespuesta() {
+            const respuestaUsuario = parseInt(document.getElementById('respuestaUsuario').value);
+            const resultadoElemento = document.getElementById('resultado');
+
+            if (isNaN(respuestaUsuario)) {
+                resultadoElemento.textContent = "Por favor, introduce un número.";
+                resultadoElemento.className = "incorrecto";
+            } else if (respuestaUsuario === sumaCorrecta) {
+                resultadoElemento.textContent = "¡Correcto! 🎉";
+                resultadoElemento.className = "correcto";
+            } else {
+                resultadoElemento.textContent = `Incorrecto. La respuesta correcta era ${sumaCorrecta}.`;
+                resultadoElemento.className = "incorrecto";
+            }
+        }
+
+        function reiniciarJuego() {
+            generarNumeros();
+        }
+
+        // Iniciar el juego cuando la página carga
+        window.onload = generarNumeros;
+    </script>
+
+</body>
+</html>
