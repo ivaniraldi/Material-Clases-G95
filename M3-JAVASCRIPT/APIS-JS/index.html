@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>APIS en JavaScript</title>
+    <style>
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 10px;
+      }
+      .card {
+        border: 2px solid orange;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+      }
+      .card-title {
+        font-weight: bolder;
+        text-transform: capitalize;
+      }
+      .card-link {
+        color: rgb(209, 99, 35);
+      }
+      #error{
+        color: red;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>20 Pokemones</h1>
+    <div id="container"></div>
+    <div id="error"></div>
+
+    <script>
+      // Email, telefono, nombre completo, ciudad e imagen
+
+      // https://randomuser.me/api/
+      console.log("Hola mundo");
+      const container = document.querySelector("#container");
+      const divError = document.querySelector("#error")
+
+      let getPokes = async function () {
+        try {
+          let res = await fetch("https://pokeap.co/api/v2/pokemon/?limit=200"); //SI ESTO FALLA mi codigo se frena
+          let data = await res.json();
+          console.log(data.results);
+          return data.results;
+        } catch (error) {
+            divError.innerHTML= "Algo fallo :(" + " " +  error
+          console.log(error);
+        }
+      };
+
+      let renderPokes = async () => {
+        try {
+          let pokemones = await getPokes();
+          let template = "";
+
+          pokemones.forEach((el) => {
+            template += `
+            <p class="card">
+                <span class="card-title"> ${el.name} </span>
+                <br>
+                <a class="card-link" href="${el.url}" target="_blank"> Ver Pokemon </a>
+            </p>
+            `;
+          });
+
+          container.innerHTML = template;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      renderPokes();
+    </script>
+  </body>
+</html>
