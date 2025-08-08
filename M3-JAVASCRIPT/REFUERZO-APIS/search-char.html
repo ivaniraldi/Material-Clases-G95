@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refuerzo APIS - Buscar Personajes</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+        <h1 class="text-center mt-3 text-2xl font-bold underline">Nuestra Web de Game Of Thrones</h1>
+
+    <h2 class="underline ms-3 my-3">Buscar por personajes</h2>
+
+    <nav class="flex justify-around p-3 border border-1">
+        <a class="text-blue-500 underline" href="./index.html">Todos los Personajes</a>
+        <a class="text-blue-500 underline" href="./search-continent.html">Buscar por Continentes</a>
+    </nav>
+    <div class="flex justify-center p-3" >
+        <select class="border border-1 border-blue-300 p-2 my-3 rounded-md" name="chars" id="chars">
+            <option value="0">Seleccione un personaje</option>
+        </select>
+    </div>
+
+    <div id="renderChar">
+
+    </div>
+
+    <script src="./assets/js/search-char.js"></script>
+</body>
+</html>

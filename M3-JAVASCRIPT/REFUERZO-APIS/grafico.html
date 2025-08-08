@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio - Graficos con Chart.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <h1>Últimos Sismos en Chile</h1>
+    <div class="grafica">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+      async function getAndCreateDataToChart() {
+        const res = await fetch("https://api.gael.cloud/general/public/sismos");
+        const sismos = await res.json();
+        console.log(sismos)
+        const labels = sismos.map((sismo) => {
+          return sismo.Fecha;
+        });
+        console.log(labels)
+        const data = sismos.map((sismo) => {
+          const magnitud = sismo.Magnitud.split(" ")[0];
+          return Number(magnitud);
+        });
+        console.log(data)
+        const datasets = [
+          {
+            label: "Magnitud",
+            borderColor: "rgb(0, 255, 255)",
+            data,
+          },
+        ];
+        return { labels, datasets };
+      }
+
+      async function renderGrafica() {
+        const data = await getAndCreateDataToChart(); // { labels, datasets }
+        const config = {
+          type: "line",
+          data,
+        };
+        const myChart = document.getElementById("myChart");
+        myChart.style.backgroundColor = "white";
+        new Chart(myChart, config);
+      }
+      renderGrafica();
+    </script>
+  </body>
+</html>
