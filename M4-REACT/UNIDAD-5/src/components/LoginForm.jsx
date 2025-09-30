@@ -1,7 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 
 function LoginForm() {
+    const navegar = useNavigate()
   return (
     <Form>
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -19,8 +21,8 @@ function LoginForm() {
       <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
+      <Button onClick={()=> navegar("/")} variant="primary">
+        Iniciar Sesión
       </Button>
     </Form>
   );
