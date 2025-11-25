@@ -1,0 +1,58 @@
+-- Active: 1762881860375@@127.0.0.1@5432@clases_g95
+CREATE TABLE posts (
+    id SERIAL,
+    title VARCHAR,
+    content TEXT
+);
+
+INSERT INTO posts (title, content) VALUES
+('Articulo 3', 'LOREM IPSUM ET...'),
+('Articulo 4', 'LOREM IPSUM ET...');
+
+CREATE TABLE comments (
+    id SERIAL,
+    content TEXT,
+    post_id INTEGER
+);
+
+INSERT INTO comments (content, post_id) VALUES
+('Comentario 1', 1),
+('Comentario 2', 1),
+('Comentario 1', 2);
+
+SELECT * FROM posts;
+SELECT * FROM comments;
+SELECT * FROM posts, comments;
+
+SELECT * FROM posts, comments where post_id = posts.id;
+
+SELECT * FROM bitcoins;
+SELECT * FROM usuarios;
+
+
+select u.nombre, u.email, bit.bitcoinadress as direccion, bit.monto from usuarios as u, bitcoins as bit;
+
+SELECT * FROM bitcoins, usuarios WHERE bitcoins.email = usuarios.email; 
+
+UPDATE comments SET post_id = null WHERE content = 'Comentario 2' OR post_id = 2;
+
+SELECT * FROM posts INNER JOIN comments ON posts.id = comments.post_id;
+
+SELECT *
+FROM bitcoins
+INNER JOIN usuarios
+    ON bitcoins.email = usuarios.email;
+
+SELECT * FROM posts LEFT JOIN comments ON posts.id = comments.post_id;
+
+
+SELECT *
+FROM bitcoins
+LEFT JOIN usuarios
+    ON bitcoins.email = usuarios.email;
+
+SELECT * FROM posts FULL JOIN comments ON posts.id = comments.post_id;
+
+SELECT * FROM bitcoins FULL JOIN usuarios ON bitcoins.email = usuarios.email;
+
+SELECT * FROM posts CROSS JOIN comments;
