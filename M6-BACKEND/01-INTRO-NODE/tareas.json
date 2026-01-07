@@ -1,0 +1,22 @@
+[
+     {
+          "tarea": "Ir al gimnasio",
+          "estado": "pendiente"
+     },
+     {
+          "tarea": "Buscar al niño al colegio",
+          "estado": "completada"
+     },
+     {
+          "tarea": "Pagar los gastos comunes",
+          "estado": "completada"
+     },
+     {
+          "tarea": "Preparar la comida",
+          "estado": "completada"
+     },
+     {
+          "tarea": "Estudiar para la prueba",
+          "estado": "pendiente"
+     }
+]
