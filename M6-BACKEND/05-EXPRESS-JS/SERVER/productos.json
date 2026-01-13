@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "nombre": "Audifonos",
+    "precio": 18990
+  },
+  {
+    "id": 2,
+    "nombre": "Aro de Luz",
+    "precio": 21990
+  },
+  {
+    "id": 3,
+    "nombre": "Monitor",
+    "precio": 29990
+  },
+  {
+    "id": 4,
+    "nombre": "Balon",
+    "precio": 15090
+  },
+  {
+    "id": 5,
+    "nombre": "Peine",
+    "precio": 5090
+  },
+  {
+    "id": 6,
+    "nombre": "test",
+    "precio": 5090
+  },
+  {
+    "id": 6,
+    "nombre": "test",
+    "precio": 5090
+  },
+  {
+    "id": 6,
+    "nombre": "test",
+    "precio": 5090
+  },
+  {
+    "id": 1768348203126,
+    "nombre": "Microfono",
+    "precio": "6000"
+  }
+]

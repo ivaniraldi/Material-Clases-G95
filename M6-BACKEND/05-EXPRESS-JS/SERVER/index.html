@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Server Express</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Documentación Server Express</h1>
+        <h2>Rutas Disponibles</h2>
+        <ul class="list-group
+">
+            <li class="list-group-item">
+                <strong>GET /</strong> - Página de inicio del servidor.
+            </li>
+            <li class="list-group-item">
+                <strong>GET /hora</strong> - Devuelve la hora actual del servidor en formato JSON.
+            </li>
+        </ul>
+    </div>
+
+
+    <script>
+        // Ejemplo de cómo hacer una solicitud a la ruta /hora y mostrar la respuesta en la consola
+        fetch('/hora')
+            .then(response => response.json())
+            .then(data => console.log('Hora del servidor:', data.hora))
+            .catch(error => console.error('Error al obtener la hora:', error));
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
