@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>API de Viajes</h1>
+    <section>
+        <div>
+            <form action="">
+                <input type="text" id="destino" placeholder="Destino">
+                <input type="number" id="presupuesto" placeholder="Presupuesto">
+                <button id="agregarViaje">Agregar Viaje</button>
+            </form>
+        </div>
+        <div>
+            <form action="">
+                <input type="text" id="nombreEquipamiento" placeholder="Nombre del equipamiento">
+                <button id="agregarEquipamiento">Agregar Equipamiento</button>
+            </form>
+        </div>
+    </section>
+    <div id="viajes"> 
+
+    </div>
+    <div id="equipamiento">
+
+    </div>
+
+    <script type="module">
+        const viajesDiv = document.getElementById('viajes');
+        const equipamientoDiv = document.getElementById('equipamiento');
+
+        async function fetchViajes() {
+            const response = await fetch('http://localhost:3000/viajes');
+            const viajes = await response.json();
+            return viajes;
+        }
+
+        async function fetchEquipamiento() {
+            const response = await fetch('http://localhost:3000/equipamiento');
+            const equipamiento = await response.json();
+            return equipamiento;
+        }
+        async function renderData() {
+            const viajes = await fetchViajes();
+            const equipamiento = await fetchEquipamiento();
+
+            let viajesTemplate = ""
+            let equipamientoTemplate = ""
+
+            for(let viaje of viajes){
+                viajesTemplate += `<p>Destino: ${viaje.destino} - Presupuesto: ${viaje.presupuesto}</p>`;
+            }
+            for(let item of equipamiento){
+                equipamientoTemplate += `<p>Nombre: ${item.nombre}</p>`;
+            }
+            viajesDiv.innerHTML = viajesTemplate;
+            equipamientoDiv.innerHTML = equipamientoTemplate;
+        }
+        renderData();
+
+        const agregarViajeBtn = document.getElementById('agregarViaje');
+        agregarViajeBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const destino = document.getElementById('destino').value;
+            const presupuesto = document.getElementById('presupuesto').value;
+
+            await fetch('http://localhost:3000/viajes', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ destino, presupuesto })
+            });
+            renderData();
+        });
+
+        const agregarEquipamientoBtn = document.getElementById('agregarEquipamiento');
+        agregarEquipamientoBtn.addEventListener('click', async (e) => {
+            e.preventDefault();
+            const nombre = document.getElementById('nombreEquipamiento').value;
+
+            await fetch('http://localhost:3000/equipamiento', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre })
+            });
+            renderData();
+        });
+    </script>
+
+</body>
+</html>
