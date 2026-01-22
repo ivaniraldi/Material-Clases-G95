@@ -10,6 +10,7 @@ const pool = new Pool({
     allowExitOnIdle: true
 })
 
+
 const getDate = async () => {
     const res = await pool.query("SELECT NOW()");
     console.log("Base de datos conectada y funcionando a las: " + res.rows[0].now)
